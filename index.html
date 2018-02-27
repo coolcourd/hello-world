@@ -1,4 +1,52 @@
-<link rel="stylesheet" href="./style.css">
-<h1>Hello World</h1>
-<div id="root"> </div>
-<script src="./index.js"> </script>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+    var config = {
+        apiKey: "AIzaSyAIPKSqo1bN7c3CYdwBXKEPGhasun9H8OU",
+        authDomain: "playground-12594.firebaseapp.com",
+        databaseURL: "https://playground-12594.firebaseio.com",
+        projectId: "playground-12594",
+        storageBucket: "playground-12594.appspot.com",
+        messagingSenderId: "321284468573"
+      };
+      firebase.initializeApp(config);
+const database = firebase.database();
+
+database.ref().set({name: "courd"});
+
+
+const Yo = () =>{ return(<textarea></textarea>)}
+
+const App = () => {
+  return (
+  <div>
+  <h1>Hello, world!</h1>
+  <p>Courd is great</p>
+  <Yo/>
+  </div>
+)};
+
+
+
+
+      ReactDOM.render(
+        <App/>,
+        document.getElementById('root')
+      );
+
+
+    </script>
+  </body>
+</html>
